@@ -2,25 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import {
-  ChevronDown,
-  Play,
-  Star,
-  Award,
-  Camera,
-  Film,
-  Instagram,
-  Youtube,
-  Music,
-  Facebook,
-  Mail,
-  Phone,
-  X,
-  ChevronLeft,
-  ChevronRight,
-  ImageIcon,
-  Video,
-} from "lucide-react"
+import { ChevronDown, Play, Star, Award, Camera, Film, Instagram, Youtube, Music, Facebook, Mail, Phone, X, ChevronLeft, ChevronRight, ImageIcon, Video } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -50,19 +32,51 @@ export default function Portfolio() {
   ]
 
   const movies = [
-    { title: "MEHAR", year: "2025", role: "Lead", poster: "/images/mehar.png" },
-    { title: "Little Hero", year: "2022", role: "Supporting", poster: "/placeholder.svg?height=300&width=200" },
-    { title: "Dream Catcher", year: "2024", role: "Lead", poster: "/placeholder.svg?height=300&width=200" },
+    { title: "MEHAR", year: "2025", role: "Lead", poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985435/Mehar1_mfainq.png" },
+    { title: "MAJHAIL", year: "2025", role: "Supporting", poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985463/majhail_u01qa4.png" },
+    { title: "Rumi Ki Sharafat", year: "Soon..", role: "Supporting", poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985888/rumi_eusw6u.png" },
   ]
 
   const advertisements = [
-    { brand: "Happy Toys", year: "2023", type: "TV Commercial", thumbnail: "/placeholder.svg?height=200&width=300" },
-    { brand: "Kids Fashion", year: "2023", type: "Print Ad", thumbnail: "/placeholder.svg?height=200&width=300" },
     {
-      brand: "Healthy Snacks",
+      brand: "Y Play Z",
+      year: "2025",
+      type: "video",
+      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753998672/b5471df8-28c0-4f6c-beea-4addf51e34d6.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753999037/For_y.play.z_Styling_and_Direction_ayushi_agarwaaal_khyati_tyagi_Photographer_amitanand_r_1_d7f0gr.mp4",
+      alt: "Y Play Z Campaign",
+    },
+    {
+      brand: "Mother Dairy",
       year: "2024",
-      type: "Digital Campaign",
-      thumbnail: "/placeholder.svg?height=200&width=300",
+      type: "video",
+      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985415/motherdairy_tsixdl.jpg",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753999237/Mother_Dairy_Maa_Jaisi_coolness___25_sec_mrmlc4.mp4",
+      alt: "Mother Dairy TV Commercial",
+    },
+    {
+      brand: "IDFC First Bank",
+      year: "2024",
+      type: "video",
+      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753966002/idfc_uh4vyf.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753966303/This_Children_s_Day_don_t_be_fooled_by_scammers_Stay_sharp_bank_safe._ow15ku.mp4",
+      alt: "IDFC First Bank TV Commercial",
+    },
+    {
+      brand: "Election Commission TVC",
+      year: "2024",
+      type: "image",
+      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753988263/89d3178a-b5fc-46ee-bbfe-36f21c63ae7e.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754000089/Election_commission_TVC_csnkv1.mp4",
+      alt: "Election Commission Campaign Ad",
+    },
+    {
+      brand: "Tata Communications Limited",
+      year: "2023",
+      type: "image",
+      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989263/8ed97ca0-66c9-48d6-a110-cc2e6aceb558.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989263/8ed97ca0-66c9-48d6-a110-cc2e6aceb558.png",
+      alt: "Tata Communications TV Commercial",
     },
   ]
 
@@ -75,86 +89,103 @@ export default function Portfolio() {
   const socialMedia = [
     {
       platform: "Instagram",
-      handle: "@agamvirsingh_actor",
-      followers: "25.2K",
+      handle: "@agam.vir18",
+      followers: "11.6K",
       icon: Instagram,
-      url: "https://instagram.com/agamvirsingh_actor",
-    },
-    {
-      platform: "TikTok",
-      handle: "@agamvirsingh",
-      followers: "18.5K",
-      icon: Music,
-      url: "https://tiktok.com/@agamvirsingh",
+      url: "https://www.instagram.com/agam.vir18?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     },
     {
       platform: "YouTube",
       handle: "Agamvir Singh",
-      followers: "12.1K",
       icon: Youtube,
-      url: "https://youtube.com/@agamvirsingh",
+      url: "https://youtube.com/@agamvirsingh1819?si=QpBCGjafRSVw_7h1",
     },
     {
       platform: "Facebook",
       handle: "Agamvir Singh Official",
-      followers: "8.3K",
+      followers: "1.7K",
       icon: Facebook,
-      url: "https://facebook.com/agamvirsingh.official",
+      url: "https://www.facebook.com/agamvir.singh.395",
     },
   ]
 
   const galleryMedia = [
     {
+      type: "video",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753993984/ap_Dhillon_x_Suresh_Raina_play_cricket_with_kids_nw1k3a.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753992494/ffbeafd3-746b-41c6-9fe2-52de9ce3f988.png",
+      alt: "Acting reel",
+      category: "Behind the Scenes",
+    },
+    {
       type: "image",
-      src: "/placeholder.svg?height=600&width=400",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989756/WhatsApp_Image_2025-08-01_at_00.52.06_cc50fc7b_xqdpao.jpg",
       alt: "Professional headshot",
-      category: "Headshots",
+      category: "Celebs",
     },
     {
       type: "video",
-      src: "/placeholder.svg?height=400&width=600",
-      poster: "/placeholder.svg?height=400&width=600",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753989927/For_y.play.z_Styling_and_Direction_ayushi_agarwaaal_khyati_tyagi_Photographer_amitanand_r_zzptim.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989918/8c5060b7-b0ee-4e8e-9dca-07f4d196deef.png",
       alt: "Acting reel",
-      category: "Reels",
+      category: "Behind the Scenes",
     },
     {
       type: "image",
-      src: "/placeholder.svg?height=500&width=700",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753990084/WhatsApp_Image_2025-08-01_at_00.52.05_f899158f_bhbkof.jpg",
       alt: "Behind the scenes",
       category: "Behind the Scenes",
     },
     {
       type: "image",
-      src: "/placeholder.svg?height=600&width=400",
-      alt: "Movie still",
-      category: "Movies",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753991231/dcf6eaab-76ec-4d33-9941-8672c7b2ddbf.png",
+      alt: "Drip",
+      category: "Drips",
     },
     {
       type: "video",
-      src: "/placeholder.svg?height=400&width=600",
-      poster: "/placeholder.svg?height=400&width=600",
-      alt: "Commercial work",
-      category: "Commercials",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753990791/bts_mehr_upcomingmovie_kidmodel_kidmodel_model_sikhboy_shoot_vifuq9.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753990540/e686ce6b-0443-4541-9b1e-d655e6615c6e.png",
+      alt: "Movie Still",
+      category: "Movies",
     },
     {
       type: "image",
-      src: "/placeholder.svg?height=500&width=500",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753991672/ca246fc0-d16f-4386-afc7-99caa2a36a36.png",
       alt: "Award ceremony",
       category: "Events",
     },
     {
       type: "image",
-      src: "/placeholder.svg?height=600&width=800",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753991496/WhatsApp_Image_2025-08-01_at_00.52.06_4ce2a2ed_y0xri3.jpg",
+      alt: "Professional headshot",
+      category: "Celebs",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753990269/IMG-20221224-WA0001_nyprap.jpg",
       alt: "Photo shoot",
       category: "Photo Shoots",
     },
     {
-      type: "video",
-      src: "/placeholder.svg?height=400&width=600",
-      poster: "/placeholder.svg?height=400&width=600",
-      alt: "Interview",
-      category: "Interviews",
+      type: "image",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753992158/WhatsApp_Image_2025-08-01_at_00.52.05_fe08f35e_setn0k.jpg",
+      alt: "Professional headshot",
+      category: "Celebs",
     },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753991999/shoot_christmasshoot_shootdiaries_beautifulpics_ll1iy3.jpg",
+      alt: "Photo shoot",
+      category: "Photo Shoots",
+    },
+    // Add advertisements to the combined media array
+    ...advertisements.map((ad) => ({
+      type: ad.type,
+      src: ad.src,
+      alt: ad.alt,
+      category: "Advertisements",
+    })),
   ]
 
   const openLightbox = (index: number) => {
@@ -192,7 +223,7 @@ export default function Portfolio() {
           <div className="hidden md:block absolute inset-0">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url('/images/final.png')` }}
+              style={{ backgroundImage: `url('https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754001128/final_npqgji.png')` }}
             />
             {/* Dark gradient fade from bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
@@ -202,7 +233,7 @@ export default function Portfolio() {
           <div className="md:hidden absolute inset-0">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url('/images/bg2.png')` }}
+              style={{ backgroundImage: `url('https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754001055/bg2_ee58um.png')` }}
             />
             {/* Dark gradient fade from bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -404,7 +435,7 @@ export default function Portfolio() {
                     >
                       <div className="max-w-4xl mx-auto">
                         <img
-                          src="/images/home1.jpg"
+                          src="https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985218/home1_lbpnjv.jpg"
                           alt="Agamvir Singh"
                           className="w-48 h-64 object-cover rounded-lg mx-auto mb-8 shadow-2xl"
                         />
@@ -454,7 +485,7 @@ export default function Portfolio() {
 
                       {/* Gallery Grid */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {galleryMedia.map((media, index) => (
+                        {galleryMedia.slice(0, 11).map((media, index) => (
                           <motion.div
                             key={index}
                             className="relative group cursor-pointer overflow-hidden rounded-lg bg-white/10 backdrop-blur border border-white/20"
@@ -471,7 +502,7 @@ export default function Portfolio() {
                               ) : (
                                 <div className="relative w-full h-full">
                                   <img
-                                    src={media.poster || "/placeholder.svg"}
+                                    src={("poster" in media && media.poster) ? media.poster : "/placeholder.svg"}
                                     alt={media.alt}
                                     className="w-full h-full object-cover"
                                   />
@@ -548,9 +579,11 @@ export default function Portfolio() {
                       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Advertisements</h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {advertisements.map((ad, index) => (
-                          <Card
+                          <motion.div
                             key={index}
-                            className="bg-white/10 backdrop-blur border-white/20 overflow-hidden group hover:scale-105 transition-transform duration-300"
+                            className="relative group cursor-pointer overflow-hidden rounded-lg bg-white/10 backdrop-blur border border-white/20"
+                            whileHover={{ scale: 1.05 }}
+                            onClick={() => openLightbox(11 + index)}
                           >
                             <div className="relative">
                               <img
@@ -558,18 +591,32 @@ export default function Portfolio() {
                                 alt={ad.brand}
                                 className="w-full h-48 object-cover"
                               />
+                              {ad.type === "video" && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                                  <Play className="h-12 w-12 text-white" />
+                                </div>
+                              )}
                               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <Play className="h-8 w-8 text-white" />
+                                <div className="text-center">
+                                  {ad.type === "video" ? (
+                                    <Video className="h-8 w-8 text-white mx-auto mb-2" />
+                                  ) : (
+                                    <ImageIcon className="h-8 w-8 text-white mx-auto mb-2" />
+                                  )}
+                                  <p className="text-white text-sm">Click to view</p>
+                                </div>
                               </div>
                             </div>
-                            <CardContent className="p-4">
+                            <div className="p-4">
                               <h3 className="text-lg font-semibold mb-2 text-white">{ad.brand}</h3>
                               <div className="flex justify-between items-center text-sm">
-                                <span className="text-gray-300">{ad.type}</span>
+                                <span className="text-gray-300">
+                                  {ad.type === "video" ? "Video Campaign" : "Print Ad"}
+                                </span>
                                 <Badge variant="outline">{ad.year}</Badge>
                               </div>
-                            </CardContent>
-                          </Card>
+                            </div>
+                          </motion.div>
                         ))}
                       </div>
                     </motion.div>
