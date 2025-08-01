@@ -100,7 +100,7 @@ export default function Portfolio() {
       src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753966303/This_Children_s_Day_don_t_be_fooled_by_scammers_Stay_sharp_bank_safe._ow15ku.mp4",
       poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753966002/idfc_uh4vyf.png",
       alt: "IDFC First Bank TV Commercial",
-      description: "Children's Day Campaign",
+      description: "TV Commercial",
     },
     {
       brand: "AP Dhillon: First of a kind",
@@ -111,7 +111,7 @@ export default function Portfolio() {
       src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753993984/ap_Dhillon_x_Suresh_Raina_play_cricket_with_kids_nw1k3a.mp4",
       poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754068775/b159dda3-d38f-435e-9577-7a2a5b64c8bf.png",
       alt: "AP Dhillon",
-      description: "Music Video Feature",
+      description: "Promotional Advertisement",
     },
     {
       brand: "Y Play Z",
