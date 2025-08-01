@@ -2,7 +2,24 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, Play, Star, Award, Camera, Film, Instagram, Youtube, Music, Facebook, Mail, Phone, X, ChevronLeft, ChevronRight, ImageIcon, Video } from 'lucide-react'
+import {
+  ChevronDown,
+  Play,
+  Star,
+  Award,
+  Camera,
+  Film,
+  Instagram,
+  Youtube,
+  Facebook,
+  Mail,
+  Phone,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  ImageIcon,
+  Video,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -32,27 +49,48 @@ export default function Portfolio() {
   ]
 
   const movies = [
-    { title: "MEHAR", year: "2025", role: "Lead", poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985435/Mehar1_mfainq.png" },
-    { title: "MAJHAIL", year: "2025", role: "Supporting", poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985463/majhail_u01qa4.png" },
-    { title: "Rumi Ki Sharafat", year: "Soon..", role: "Supporting", poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985888/rumi_eusw6u.png" },
+    {
+      title: "MEHAR",
+      year: "2025",
+      role: "Lead",
+      type: "video",
+      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985435/Mehar1_mfainq.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754068263/SSYouTube.online_Mehar_Teaser_Raj_Kundra_Geeta_Basra_Agamveer_Dreams_Music_In_Cinemas_5th_Sep_2025_1080p_bppltj.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985435/Mehar1_mfainq.png",
+      alt: "MEHAR Movie Trailer",
+    },
+    {
+      title: "MAJHAIL",
+      year: "2025",
+      role: "Supporting",
+      type: "video",
+      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985463/majhail_u01qa4.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754068529/majhail_A_small_appearance_in_a_big_movie_Majhail_2025_this_is_a_beginning_model_kidmodel_ag_xlal8x.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985463/majhail_u01qa4.png",
+      alt: "MAJHAIL Movie Trailer",
+    },
+    {
+      title: "Rumi Ki Sharafat",
+      year: "Soon..",
+      role: "Supporting",
+      type: "video",
+      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985888/rumi_eusw6u.png",
+      src: "/placeholder.svg?height=400&width=600", // Add actual video URL when available
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985888/rumi_eusw6u.png",
+      alt: "Rumi Ki Sharafat Movie Trailer",
+    },
   ]
 
   const advertisements = [
-    {
-      brand: "Y Play Z",
-      year: "2025",
-      type: "video",
-      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753998672/b5471df8-28c0-4f6c-beea-4addf51e34d6.png",
-      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753999037/For_y.play.z_Styling_and_Direction_ayushi_agarwaaal_khyati_tyagi_Photographer_amitanand_r_1_d7f0gr.mp4",
-      alt: "Y Play Z Campaign",
-    },
     {
       brand: "Mother Dairy",
       year: "2024",
       type: "video",
       thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985415/motherdairy_tsixdl.jpg",
       src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753999237/Mother_Dairy_Maa_Jaisi_coolness___25_sec_mrmlc4.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753985415/motherdairy_tsixdl.jpg",
       alt: "Mother Dairy TV Commercial",
+      description: "TV Commercial",
     },
     {
       brand: "IDFC First Bank",
@@ -60,23 +98,75 @@ export default function Portfolio() {
       type: "video",
       thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753966002/idfc_uh4vyf.png",
       src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753966303/This_Children_s_Day_don_t_be_fooled_by_scammers_Stay_sharp_bank_safe._ow15ku.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753966002/idfc_uh4vyf.png",
       alt: "IDFC First Bank TV Commercial",
+      description: "Children's Day Campaign",
+    },
+    {
+      brand: "AP Dhillon: First of a kind",
+      year: "2023",
+      type: "video",
+      thumbnail:
+        "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754068775/b159dda3-d38f-435e-9577-7a2a5b64c8bf.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753993984/ap_Dhillon_x_Suresh_Raina_play_cricket_with_kids_nw1k3a.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754068775/b159dda3-d38f-435e-9577-7a2a5b64c8bf.png",
+      alt: "AP Dhillon",
+      description: "Music Video Feature",
+    },
+    {
+      brand: "Y Play Z",
+      year: "2025",
+      type: "video",
+      thumbnail:
+        "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753987694/aed89ef8-9258-4783-afed-b05a6edbbe22.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753999037/For_y.play.z_Styling_and_Direction_ayushi_agarwaaal_khyati_tyagi_Photographer_amitanand_r_1_d7f0gr.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753987694/aed89ef8-9258-4783-afed-b05a6edbbe22.png",
+      alt: "Y Play Z Campaign",
+      description: "Brand Campaign",
+    },
+    {
+      brand: "Swachh Bharat Urban",
+      year: "2024",
+      type: "video",
+      thumbnail:
+        "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754069545/3b983242-fee8-4e22-ace1-73d518a1a8e9.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754069564/Amitabh_Bachhan_joins_the_SwachhataHiSeva2024_nmkafk.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754069545/3b983242-fee8-4e22-ace1-73d518a1a8e9.png",
+      alt: "Swachh Bharat Urban Campaign",
+      description: "Government Campaign",
+    },
+    {
+      brand: "Paper Boat: Chikki",
+      year: "2024",
+      type: "video",
+      thumbnail:
+        "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754080613/e626735c-1906-4eaa-bb25-d47e8d27f810.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754080625/Paper_boat_Shoot_done_Feeling_blessed_l7osgh.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754080613/e626735c-1906-4eaa-bb25-d47e8d27f810.png",
+      alt: "Paper Boat Ad",
+      description: "Food Commercial",
     },
     {
       brand: "Election Commission TVC",
       year: "2024",
-      type: "image",
-      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753988263/89d3178a-b5fc-46ee-bbfe-36f21c63ae7e.png",
+      type: "video",
+      thumbnail:
+        "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753988263/89d3178a-b5fc-46ee-bbfe-36f21c63ae7e.png",
       src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754000089/Election_commission_TVC_csnkv1.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753988263/89d3178a-b5fc-46ee-bbfe-36f21c63ae7e.png",
       alt: "Election Commission Campaign Ad",
+      description: "Awareness Campaign",
     },
     {
       brand: "Tata Communications Limited",
       year: "2023",
-      type: "image",
-      thumbnail: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989263/8ed97ca0-66c9-48d6-a110-cc2e6aceb558.png",
-      src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989263/8ed97ca0-66c9-48d6-a110-cc2e6aceb558.png",
+      type: "video",
+      thumbnail:
+        "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989263/8ed97ca0-66c9-48d6-a110-cc2e6aceb558.png",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754000086/tcl_tclindia_newrelease_tclbrand_nkwwjz.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989263/8ed97ca0-66c9-48d6-a110-cc2e6aceb558.png",
       alt: "Tata Communications TV Commercial",
+      description: "Corporate TVC",
     },
   ]
 
@@ -109,10 +199,11 @@ export default function Portfolio() {
     },
   ]
 
-  const galleryMedia = [
+  // Gallery items (you can add as many as you want here)
+  const galleryItems = [
     {
       type: "video",
-      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753993984/ap_Dhillon_x_Suresh_Raina_play_cricket_with_kids_nw1k3a.mp4",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754081305/shoot_with_singer_cricketer._ap.dhillxn_sureshraina3_agam.vir18_faiyph.mp4",
       poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753992494/ffbeafd3-746b-41c6-9fe2-52de9ce3f988.png",
       alt: "Acting reel",
       category: "Behind the Scenes",
@@ -125,15 +216,22 @@ export default function Portfolio() {
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753989927/For_y.play.z_Styling_and_Direction_ayushi_agarwaaal_khyati_tyagi_Photographer_amitanand_r_zzptim.mp4",
-      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989918/8c5060b7-b0ee-4e8e-9dca-07f4d196deef.png",
-      alt: "Acting reel",
-      category: "Behind the Scenes",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1754000097/bhangra_kidmodel_bhangralovers_%EF%B8%8F_firstcryindia_family_familyfunction_rbj1gv.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754081734/2468720c-92fc-47a2-ab29-8a884176dd15.png",
+      alt: "Bhangra",
+      category: "Dance",
     },
     {
       type: "image",
       src: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753990084/WhatsApp_Image_2025-08-01_at_00.52.05_f899158f_bhbkof.jpg",
       alt: "Behind the scenes",
+      category: "Behind the Scenes",
+    },
+    {
+      type: "video",
+      src: "https://res.cloudinary.com/dj2u6y8iv/video/upload/v1753989927/For_y.play.z_Styling_and_Direction_ayushi_agarwaaal_khyati_tyagi_Photographer_amitanand_r_zzptim.mp4",
+      poster: "https://res.cloudinary.com/dj2u6y8iv/image/upload/v1753989918/8c5060b7-b0ee-4e8e-9dca-07f4d196deef.png",
+      alt: "Acting reel",
       category: "Behind the Scenes",
     },
     {
@@ -179,14 +277,31 @@ export default function Portfolio() {
       alt: "Photo shoot",
       category: "Photo Shoots",
     },
-    // Add advertisements to the combined media array
+  ]
+
+  // Create combined media array with dynamic indexing
+  const galleryMedia = [
+    ...galleryItems,
     ...advertisements.map((ad) => ({
       type: ad.type,
       src: ad.src,
+      poster: ad.poster,
       alt: ad.alt,
       category: "Advertisements",
     })),
+    ...movies.map((movie) => ({
+      type: movie.type,
+      src: movie.src,
+      poster: movie.poster,
+      alt: movie.alt,
+      category: "Movies",
+    })),
   ]
+
+  // Dynamic index calculations
+  const galleryLength = galleryItems.length
+  const advertisementStartIndex = galleryLength
+  const movieStartIndex = galleryLength + advertisements.length
 
   const openLightbox = (index: number) => {
     setCurrentMedia(index)
@@ -223,7 +338,9 @@ export default function Portfolio() {
           <div className="hidden md:block absolute inset-0">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url('https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754001128/final_npqgji.png')` }}
+              style={{
+                backgroundImage: `url('https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754001128/final_npqgji.png')`,
+              }}
             />
             {/* Dark gradient fade from bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
@@ -233,7 +350,9 @@ export default function Portfolio() {
           <div className="md:hidden absolute inset-0">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url('https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754001055/bg2_ee58um.png')` }}
+              style={{
+                backgroundImage: `url('https://res.cloudinary.com/dj2u6y8iv/image/upload/v1754001055/bg2_ee58um.png')`,
+              }}
             />
             {/* Dark gradient fade from bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -446,21 +565,21 @@ export default function Portfolio() {
                             <CardContent className="p-6 text-center">
                               <Film className="h-12 w-12 mx-auto mb-4 text-blue-400" />
                               <h3 className="text-xl font-semibold mb-2 text-white">Movies</h3>
-                              <p className="text-gray-300">Featured in 5+ films</p>
+                              <p className="text-gray-300">Featured in {movies.length}+ films</p>
                             </CardContent>
                           </Card>
                           <Card className="bg-white/10 backdrop-blur border-white/20">
                             <CardContent className="p-6 text-center">
                               <Camera className="h-12 w-12 mx-auto mb-4 text-green-400" />
                               <h3 className="text-xl font-semibold mb-2 text-white">Advertisements</h3>
-                              <p className="text-gray-300">10+ brand campaigns</p>
+                              <p className="text-gray-300">{advertisements.length}+ brand campaigns</p>
                             </CardContent>
                           </Card>
                           <Card className="bg-white/10 backdrop-blur border-white/20">
                             <CardContent className="p-6 text-center">
                               <Award className="h-12 w-12 mx-auto mb-4 text-yellow-400" />
                               <h3 className="text-xl font-semibold mb-2 text-white">Awards</h3>
-                              <p className="text-gray-300">3 major recognitions</p>
+                              <p className="text-gray-300">{awards.length} major recognitions</p>
                             </CardContent>
                           </Card>
                         </div>
@@ -483,9 +602,9 @@ export default function Portfolio() {
                     >
                       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Gallery</h2>
 
-                      {/* Gallery Grid */}
+                      {/* Gallery Grid - Now shows ALL gallery items */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {galleryMedia.slice(0, 11).map((media, index) => (
+                        {galleryItems.map((media, index) => (
                           <motion.div
                             key={index}
                             className="relative group cursor-pointer overflow-hidden rounded-lg bg-white/10 backdrop-blur border border-white/20"
@@ -502,7 +621,7 @@ export default function Portfolio() {
                               ) : (
                                 <div className="relative w-full h-full">
                                   <img
-                                    src={("poster" in media && media.poster) ? media.poster : "/placeholder.svg"}
+                                    src={media.poster || "/placeholder.svg"}
                                     alt={media.alt}
                                     className="w-full h-full object-cover"
                                   />
@@ -541,28 +660,42 @@ export default function Portfolio() {
                       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Movies</h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {movies.map((movie, index) => (
-                          <Card
+                          <motion.div
                             key={index}
-                            className="bg-white/10 backdrop-blur border-white/20 overflow-hidden group hover:scale-105 transition-transform duration-300"
+                            className="relative group cursor-pointer overflow-hidden rounded-lg bg-white/10 backdrop-blur border border-white/20"
+                            whileHover={{ scale: 1.05 }}
+                            onClick={() => openLightbox(movieStartIndex + index)}
                           >
                             <div className="relative">
                               <img
-                                src={movie.poster || "/placeholder.svg"}
+                                src={movie.thumbnail || "/placeholder.svg"}
                                 alt={movie.title}
-                                className="w-full h-64 object-cover"
+                                className="w-full h-48 object-cover"
                               />
+                              {movie.type === "video" && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                                  <Play className="h-12 w-12 text-white" />
+                                </div>
+                              )}
                               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <Play className="h-12 w-12 text-white" />
+                                <div className="text-center">
+                                  {movie.type === "video" ? (
+                                    <Video className="h-8 w-8 text-white mx-auto mb-2" />
+                                  ) : (
+                                    <ImageIcon className="h-8 w-8 text-white mx-auto mb-2" />
+                                  )}
+                                  <p className="text-white text-sm">Click to view</p>
+                                </div>
                               </div>
                             </div>
-                            <CardContent className="p-4">
-                              <h3 className="text-xl font-semibold mb-2 text-white">{movie.title}</h3>
-                              <div className="flex justify-between items-center">
-                                <Badge variant="secondary">{movie.year}</Badge>
-                                <span className="text-sm text-gray-300">{movie.role}</span>
+                            <div className="p-4">
+                              <h3 className="text-lg font-semibold mb-2 text-white">{movie.title}</h3>
+                              <div className="flex justify-between items-center text-sm">
+                                <span className="text-gray-300">{movie.role}</span>
+                                <Badge variant="outline">{movie.year}</Badge>
                               </div>
-                            </CardContent>
-                          </Card>
+                            </div>
+                          </motion.div>
                         ))}
                       </div>
                     </motion.div>
@@ -583,7 +716,7 @@ export default function Portfolio() {
                             key={index}
                             className="relative group cursor-pointer overflow-hidden rounded-lg bg-white/10 backdrop-blur border border-white/20"
                             whileHover={{ scale: 1.05 }}
-                            onClick={() => openLightbox(11 + index)}
+                            onClick={() => openLightbox(advertisementStartIndex + index)}
                           >
                             <div className="relative">
                               <img
@@ -610,9 +743,7 @@ export default function Portfolio() {
                             <div className="p-4">
                               <h3 className="text-lg font-semibold mb-2 text-white">{ad.brand}</h3>
                               <div className="flex justify-between items-center text-sm">
-                                <span className="text-gray-300">
-                                  {ad.type === "video" ? "Video Campaign" : "Print Ad"}
-                                </span>
+                                <span className="text-gray-300">{ad.description}</span>
                                 <Badge variant="outline">{ad.year}</Badge>
                               </div>
                             </div>
