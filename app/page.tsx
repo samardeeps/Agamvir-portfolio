@@ -840,14 +840,14 @@ export default function Portfolio() {
                             <CardContent className="p-6 text-center">
                               <Mail className="h-8 w-8 mx-auto mb-3 text-blue-400" />
                               <h4 className="font-semibold text-white mb-2">Management</h4>
-                              <p className="text-gray-300 text-sm">management@agamvirsingh.com</p>
+                              <p className="text-gray-300 text-sm">agamvir@gmail.com</p>
                             </CardContent>
                           </Card>
                           <Card className="bg-white/10 backdrop-blur border-white/20">
                             <CardContent className="p-6 text-center">
                               <Phone className="h-8 w-8 mx-auto mb-3 text-green-400" />
                               <h4 className="font-semibold text-white mb-2">Booking</h4>
-                              <p className="text-gray-300 text-sm">+1 (555) 123-4567</p>
+                              <p className="text-gray-300 text-sm">+91 84478 81009</p>
                             </CardContent>
                           </Card>
                         </div>
